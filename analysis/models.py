@@ -14,7 +14,7 @@ class StockName(models.Model):
         return self.name
 
 class StockPrices(models.Model):
-    stock_id = models.ForeignKey(StockName, on_delete=models.CASCADE)
+    stock_id = models.ForeignKey(StockName, on_delete=models.CASCADE, related_name='stocks')
     stock_date = models.DateTimeField()
     stock_open = models.DecimalField(max_digits=20, decimal_places=2)
     stock_high = models.DecimalField(max_digits=20, decimal_places=2)
